@@ -26,7 +26,7 @@ func TestConfig_Client_OAuth2Success(t *testing.T) {
 
 			// Mock successful token response
 			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(map[string]interface{}{
+			_ = json.NewEncoder(w).Encode(map[string]interface{}{
 				"access_token": "mock-access-token-12345",
 				"token_type":   "Bearer",
 				"expires_in":   3600,
@@ -69,7 +69,7 @@ func TestConfig_Client_InvalidCredentials(t *testing.T) {
 		if r.URL.Path == "/api/v1/oauth/token" {
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusUnauthorized)
-			json.NewEncoder(w).Encode(map[string]interface{}{
+			_ = json.NewEncoder(w).Encode(map[string]interface{}{
 				"error":             "invalid_client",
 				"error_description": "Client authentication failed",
 			})

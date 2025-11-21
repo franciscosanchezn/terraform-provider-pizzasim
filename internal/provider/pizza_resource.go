@@ -196,7 +196,9 @@ func (r *PizzaResource) Create(ctx context.Context, req resource.CreateRequest, 
 		resp.Diagnostics.Append(clientErrorDiagnosticsWithContext("creating pizza", data.Name.ValueString(), "", err)...)
 		return
 	}
-	defer httpResp.Body.Close()
+	defer func() {
+		_ = httpResp.Body.Close()
+	}()
 
 	// Check response status
 	if httpResp.StatusCode != http.StatusCreated && httpResp.StatusCode != http.StatusOK {
@@ -272,7 +274,9 @@ func (r *PizzaResource) Read(ctx context.Context, req resource.ReadRequest, resp
 		resp.Diagnostics.Append(clientErrorDiagnosticsWithContext("reading pizza", data.Name.ValueString(), data.Id.ValueString(), err)...)
 		return
 	}
-	defer httpResp.Body.Close()
+	defer func() {
+		_ = httpResp.Body.Close()
+	}()
 
 	// Check response status, if 404 then the resource has been deleted outside of Terraform
 	if httpResp.StatusCode == http.StatusNotFound {
@@ -397,7 +401,9 @@ func (r *PizzaResource) Update(ctx context.Context, req resource.UpdateRequest, 
 		resp.Diagnostics.Append(clientErrorDiagnosticsWithContext("updating pizza", data.Name.ValueString(), data.Id.ValueString(), err)...)
 		return
 	}
-	defer httpResp.Body.Close()
+	defer func() {
+		_ = httpResp.Body.Close()
+	}()
 
 	// Check response status
 	if httpResp.StatusCode != http.StatusOK {
@@ -469,7 +475,9 @@ func (r *PizzaResource) Delete(ctx context.Context, req resource.DeleteRequest, 
 		resp.Diagnostics.Append(clientErrorDiagnosticsWithContext("deleting pizza", data.Name.ValueString(), data.Id.ValueString(), err)...)
 		return
 	}
-	defer httpResp.Body.Close()
+	defer func() {
+		_ = httpResp.Body.Close()
+	}()
 
 	// Check response status
 	if httpResp.StatusCode != http.StatusNoContent && httpResp.StatusCode != http.StatusOK {

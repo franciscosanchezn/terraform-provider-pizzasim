@@ -332,7 +332,7 @@ func TestPizzaResource_404Handling(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(r.URL.Path, "/api/v1/oauth/token") {
 			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(map[string]interface{}{
+			_ = json.NewEncoder(w).Encode(map[string]interface{}{
 				"access_token": "test-token",
 				"token_type":   "Bearer",
 				"expires_in":   3600,
@@ -362,7 +362,7 @@ func TestPizzaResource_emptyResponse(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(r.URL.Path, "/api/v1/oauth/token") {
 			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(map[string]interface{}{
+			_ = json.NewEncoder(w).Encode(map[string]interface{}{
 				"access_token": "test-token",
 				"token_type":   "Bearer",
 				"expires_in":   3600,
@@ -401,7 +401,7 @@ func TestPizzaResource_concurrentOperations(t *testing.T) {
 
 		if strings.Contains(r.URL.Path, "/api/v1/oauth/token") {
 			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(map[string]interface{}{
+			_ = json.NewEncoder(w).Encode(map[string]interface{}{
 				"access_token": "test-token",
 				"token_type":   "Bearer",
 				"expires_in":   3600,
@@ -411,7 +411,7 @@ func TestPizzaResource_concurrentOperations(t *testing.T) {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(map[string]interface{}{
+		_ = json.NewEncoder(w).Encode(map[string]interface{}{
 			"id":          requestCount,
 			"name":        "Test Pizza",
 			"ingredients": []string{"cheese"},
@@ -434,10 +434,11 @@ func TestPizzaResource_concurrentOperations(t *testing.T) {
 				t.Errorf("Request failed: %v", err)
 				return
 			}
-			defer resp.Body.Close()
+			defer func() {
+				_ = resp.Body.Close()
+			}()
 		}()
 	}
-
 	wg.Wait()
 
 	mu.Lock()

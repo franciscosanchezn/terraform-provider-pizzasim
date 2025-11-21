@@ -12,7 +12,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
-	"github.com/hashicorp/terraform-plugin-testing/echoprovider"
 )
 
 // testAccProtoV6ProviderFactories is used to instantiate a provider during acceptance testing.
@@ -20,15 +19,6 @@ import (
 // server that the CLI can connect to and interact with.
 var testAccProtoV6ProviderFactories = map[string]func() (tfprotov6.ProviderServer, error){
 	"pizzasim": providerserver.NewProtocol6WithError(New("test")()),
-}
-
-// testAccProtoV6ProviderFactoriesWithEcho includes the echo provider alongside the pizzasim provider.
-// It allows for testing assertions on data returned by an ephemeral resource during Open.
-// The echoprovider is used to arrange tests by echoing ephemeral data into the Terraform state.
-// This lets the data be referenced in test assertions with state checks.
-var testAccProtoV6ProviderFactoriesWithEcho = map[string]func() (tfprotov6.ProviderServer, error){
-	"pizzasim": providerserver.NewProtocol6WithError(New("test")()),
-	"echo":     echoprovider.NewProviderServer(),
 }
 
 func testAccPreCheck(t *testing.T) {
@@ -140,35 +130,35 @@ func TestPizzaSimProvider_Configure_MissingCredentials(t *testing.T) {
 			oldEndpoint := os.Getenv("PIZZASIM_ENDPOINT")
 			defer func() {
 				if oldClientID != "" {
-					os.Setenv("PIZZASIM_CLIENT_ID", oldClientID)
+					_ = os.Setenv("PIZZASIM_CLIENT_ID", oldClientID)
 				} else {
-					os.Unsetenv("PIZZASIM_CLIENT_ID")
+					_ = os.Unsetenv("PIZZASIM_CLIENT_ID")
 				}
 				if oldClientSecret != "" {
-					os.Setenv("PIZZASIM_CLIENT_SECRET", oldClientSecret)
+					_ = os.Setenv("PIZZASIM_CLIENT_SECRET", oldClientSecret)
 				} else {
-					os.Unsetenv("PIZZASIM_CLIENT_SECRET")
+					_ = os.Unsetenv("PIZZASIM_CLIENT_SECRET")
 				}
 				if oldEndpoint != "" {
-					os.Setenv("PIZZASIM_ENDPOINT", oldEndpoint)
+					_ = os.Setenv("PIZZASIM_ENDPOINT", oldEndpoint)
 				} else {
-					os.Unsetenv("PIZZASIM_ENDPOINT")
+					_ = os.Unsetenv("PIZZASIM_ENDPOINT")
 				}
 			}()
 
 			if tt.clientID != "" {
-				os.Setenv("PIZZASIM_CLIENT_ID", tt.clientID)
+				_ = os.Setenv("PIZZASIM_CLIENT_ID", tt.clientID)
 			} else {
-				os.Unsetenv("PIZZASIM_CLIENT_ID")
+				_ = os.Unsetenv("PIZZASIM_CLIENT_ID")
 			}
 
 			if tt.clientSecret != "" {
-				os.Setenv("PIZZASIM_CLIENT_SECRET", tt.clientSecret)
+				_ = os.Setenv("PIZZASIM_CLIENT_SECRET", tt.clientSecret)
 			} else {
-				os.Unsetenv("PIZZASIM_CLIENT_SECRET")
+				_ = os.Unsetenv("PIZZASIM_CLIENT_SECRET")
 			}
 
-			os.Setenv("PIZZASIM_ENDPOINT", "https://test.example.com")
+			_ = os.Setenv("PIZZASIM_ENDPOINT", "https://test.example.com")
 
 			config := &Config{
 				Endpoint:     "https://test.example.com",
@@ -220,12 +210,18 @@ func TestPizzaSimProvider_Configure_InvalidEndpoint(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			oldEndpoint := os.Getenv("PIZZASIM_ENDPOINT")
-			defer os.Setenv("PIZZASIM_ENDPOINT", oldEndpoint)
+			defer func() {
+				if oldEndpoint != "" {
+					_ = os.Setenv("PIZZASIM_ENDPOINT", oldEndpoint)
+				} else {
+					_ = os.Unsetenv("PIZZASIM_ENDPOINT")
+				}
+			}()
 
 			if tt.endpoint != "" {
-				os.Setenv("PIZZASIM_ENDPOINT", tt.endpoint)
+				_ = os.Setenv("PIZZASIM_ENDPOINT", tt.endpoint)
 			} else {
-				os.Unsetenv("PIZZASIM_ENDPOINT")
+				_ = os.Unsetenv("PIZZASIM_ENDPOINT")
 			}
 
 			endpoint := os.Getenv("PIZZASIM_ENDPOINT")

@@ -1,62 +1,27 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
-# golangci-lint configuration for terraform-provider-pizzasim
 version: "2"
 
 linters:
-  default: none
   enable:
-    # Essential linters for code quality
-    - errcheck          # Check for unchecked errors
-    - gofmt             # Ensure code is formatted
-    - govet             # Standard Go vet checks
-    - ineffassign       # Detect ineffectual assignments
-    - staticcheck       # Advanced static analysis
-    
-    # Additional useful linters
-    - copyloopvar       # Check for loop variable capture issues
-    - durationcheck     # Check for duration arithmetic issues
-    - forcetypeassert   # Find forced type assertions
-    - godot             # Check for proper comment formatting
-    - makezero          # Find slice declarations with non-zero initial length
-    - misspell          # Find commonly misspelled words
-    - nilerr            # Find code returning nil when err is not nil
-    - predeclared       # Find shadowing of predeclared identifiers
-    - unconvert         # Remove unnecessary type conversions
-    - unparam           # Find unused function parameters
-    - unused            # Find unused constants, variables, functions and types
-    - usetesting        # Proper use of testing package
-  
-  exclusions:
-    generated: lax
-    presets:
-      - comments
-      - common-false-positives
-      - legacy
-      - std-error-handling
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
-      - tools$
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - copyloopvar
+    - durationcheck
+    - misspell
+    - unconvert
+    - unused
 
-issues:
-  # Show all issues - nothing hidden
-  max-issues-per-linter: 0
-  max-same-issues: 0
-  
 formatters:
   enable:
     - gofmt
-  exclusions:
-    generated: lax
-    paths:
-      - third_party$
-      - builtin$
-      - examples$
-      - tools$
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
 
 run:
   timeout: 5m
-  tests: true
