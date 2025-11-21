@@ -1,0 +1,272 @@
+2025-11-15T11:56:10.950+0100 [INFO]  Terraform version: 1.13.5
+2025-11-15T11:56:10.950+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.74.1
+2025-11-15T11:56:10.950+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2025-11-15T11:56:10.950+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-11-15T11:56:10.950+0100 [DEBUG] using github.com/zclconf/go-cty v1.16.3
+2025-11-15T11:56:10.950+0100 [INFO]  Go runtime version: go1.24.5
+2025-11-15T11:56:10.950+0100 [INFO]  CLI args: []string{"terraform", "plan"}
+2025-11-15T11:56:10.950+0100 [TRACE] Stdout is a terminal of width 192
+2025-11-15T11:56:10.950+0100 [TRACE] Stderr is a terminal of width 192
+2025-11-15T11:56:10.950+0100 [TRACE] Stdin is a terminal
+2025-11-15T11:56:10.950+0100 [DEBUG] Attempting to open CLI config file: /home/francisfeli/.terraformrc
+2025-11-15T11:56:10.950+0100 [INFO]  Loading CLI configuration from /home/francisfeli/.terraformrc
+2025-11-15T11:56:10.950+0100 [DEBUG] Explicit provider installation configuration is set
+2025-11-15T11:56:10.950+0100 [TRACE] Selected provider installation method cliconfig.ProviderInstallationDirect with includes [] and excludes []
+2025-11-15T11:56:10.950+0100 [INFO]  CLI command args: []string{"plan"}
+2025-11-15T11:56:10.951+0100 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2025-11-15T11:56:10.951+0100 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2025-11-15T11:56:10.951+0100 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2025-11-15T11:56:10.951+0100 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2025-11-15T11:56:10.951+0100 [DEBUG] Provider hashicorp.com/franciscosanchezn/pizzasim is overridden by dev_overrides
+2025-11-15T11:56:10.951+0100 [DEBUG] Provider hashicorp.com/franciscosanchezn/pizzasim is overridden to load from /home/francisfeli/Projects/public/terraform-provider-pizzasim
+2025-11-15T11:56:10.951+0100 [DEBUG] checking for provisioner in "."
+2025-11-15T11:56:10.954+0100 [DEBUG] checking for provisioner in "/usr/bin"
+2025-11-15T11:56:10.954+0100 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2025-11-15T11:56:10.954+0100 [DEBUG] Provider hashicorp.com/franciscosanchezn/pizzasim is overridden by dev_overrides
+2025-11-15T11:56:10.954+0100 [INFO]  backend/local: starting Plan operation
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: requesting state manager for workspace "default"
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: requesting state lock for workspace "default"
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: no previously-stored snapshot exists
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: reading remote state for workspace "default"
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: snapshot file has nil snapshot, but that's okay
+2025-11-15T11:56:10.954+0100 [TRACE] statemgr.Filesystem: read nil snapshot
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: populating backendrun.LocalRun for current working directory
+2025-11-15T11:56:10.954+0100 [DEBUG] Config.VerifyDependencySelections: skipping hashicorp.com/franciscosanchezn/pizzasim because it's overridden by a special configuration setting
+2025-11-15T11:56:10.954+0100 [TRACE] terraform.NewContext: starting
+2025-11-15T11:56:10.954+0100 [TRACE] terraform.NewContext: complete
+2025-11-15T11:56:10.954+0100 [TRACE] backend/local: requesting interactive input, if necessary
+2025-11-15T11:56:10.954+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.954+0100 [TRACE] terraform.contextPlugins: Initializing provider "hashicorp.com/franciscosanchezn/pizzasim" to read its schema
+2025-11-15T11:56:10.954+0100 [DEBUG] created provider logger: level=trace
+2025-11-15T11:56:10.954+0100 [INFO]  provider: configuring client automatic mTLS
+2025-11-15T11:56:10.961+0100 [DEBUG] provider: starting plugin: path=/home/francisfeli/Projects/public/terraform-provider-pizzasim/terraform-provider-pizzasim args=["/home/francisfeli/Projects/public/terraform-provider-pizzasim/terraform-provider-pizzasim"]
+2025-11-15T11:56:10.962+0100 [DEBUG] provider: plugin started: path=/home/francisfeli/Projects/public/terraform-provider-pizzasim/terraform-provider-pizzasim pid=633237
+2025-11-15T11:56:10.962+0100 [DEBUG] provider: waiting for RPC address: plugin=/home/francisfeli/Projects/public/terraform-provider-pizzasim/terraform-provider-pizzasim
+2025-11-15T11:56:10.965+0100 [INFO]  provider.terraform-provider-pizzasim: configuring server automatic mTLS: timestamp="2025-11-15T11:56:10.964+0100"
+2025-11-15T11:56:10.970+0100 [DEBUG] provider.terraform-provider-pizzasim: plugin address: network=unix address=/tmp/plugin3225656692 timestamp="2025-11-15T11:56:10.970+0100"
+2025-11-15T11:56:10.970+0100 [DEBUG] provider: using plugin: version=6
+2025-11-15T11:56:10.974+0100 [TRACE] GRPCProvider.v6: GetProviderSchema
+2025-11-15T11:56:10.974+0100 [TRACE] provider.stdio: waiting for stdio data
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Received request: tf_proto_version=6.10 tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f @module=sdk.proto tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/tf6server/server.go:544 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Sending request downstream: tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/internal/tf6serverlogging/downstream_request.go:22 tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f @module=sdk.proto tf_proto_version=6.10 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ProviderSchema lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:455 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Calling provider defined Provider Schema: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:466 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Called provider defined Provider Schema: @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:468 @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ResourceTypes lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:605 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ProviderTypeName lock: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:432 @module=sdk.framework timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Calling provider defined Provider Metadata: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:443 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Called provider defined Provider Metadata: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:445 @module=sdk.framework timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Calling provider defined Provider Resources: tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:616 @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Called provider defined Provider Resources: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:618 @module=sdk.framework timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking DataSourceTypes lock: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:276 @module=sdk.framework timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ProviderTypeName lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:432 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Calling provider defined Provider DataSources: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:287 @module=sdk.framework timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Called provider defined Provider DataSources: tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:289 @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking FunctionTypes lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server_functions.go:124 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking EphemeralResourceFuncs lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server_ephemeralresources.go:38 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ProviderTypeName lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:432 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ActionFuncs lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server_actions.go:38 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ProviderTypeName lock: tf_rpc=GetProviderSchema @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:432 @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Received downstream response: @module=sdk.proto diagnostic_error_count=0 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/internal/tf6serverlogging/downstream_request.go:61 diagnostic_warning_count=0 tf_proto_version=6.10 tf_req_duration_ms=0 tf_rpc=GetProviderSchema timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Announced server capabilities: @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/internal/tf6serverlogging/server_capabilities.go:27 @module=sdk.proto tf_proto_version=6.10 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_server_capability_plan_destroy=true tf_rpc=GetProviderSchema tf_server_capability_get_provider_schema_optional=true tf_server_capability_move_resource_state=true timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.975+0100 [TRACE] provider.terraform-provider-pizzasim: Served request: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=107f9d3d-2793-5368-3f1c-7271db23cf2f tf_rpc=GetProviderSchema @module=sdk.proto @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/tf6server/server.go:563 tf_proto_version=6.10 timestamp="2025-11-15T11:56:10.975+0100"
+2025-11-15T11:56:10.976+0100 [TRACE] provider.terraform-provider-pizzasim: Received request: @module=sdk.proto tf_req_id=44ae09ae-5ce8-24ba-6b60-5821505cfedf tf_proto_version=6.10 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_rpc=GetResourceIdentitySchemas @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/tf6server/server.go:571 timestamp="2025-11-15T11:56:10.976+0100"
+2025-11-15T11:56:10.976+0100 [TRACE] provider.terraform-provider-pizzasim: Sending request downstream: tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=44ae09ae-5ce8-24ba-6b60-5821505cfedf tf_rpc=GetResourceIdentitySchemas @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/internal/tf6serverlogging/downstream_request.go:22 @module=sdk.proto tf_proto_version=6.10 timestamp="2025-11-15T11:56:10.976+0100"
+2025-11-15T11:56:10.976+0100 [TRACE] provider.terraform-provider-pizzasim: Checking ResourceTypes lock: @module=sdk.framework tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=44ae09ae-5ce8-24ba-6b60-5821505cfedf tf_rpc=GetResourceIdentitySchemas @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-framework@v1.16.1/internal/fwserver/server.go:605 timestamp="2025-11-15T11:56:10.976+0100"
+2025-11-15T11:56:10.976+0100 [TRACE] provider.terraform-provider-pizzasim: Received downstream response: @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/internal/tf6serverlogging/downstream_request.go:61 diagnostic_error_count=0 tf_proto_version=6.10 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim tf_req_id=44ae09ae-5ce8-24ba-6b60-5821505cfedf @module=sdk.proto diagnostic_warning_count=0 tf_req_duration_ms=0 tf_rpc=GetResourceIdentitySchemas timestamp="2025-11-15T11:56:10.976+0100"
+2025-11-15T11:56:10.976+0100 [TRACE] provider.terraform-provider-pizzasim: Served request: tf_req_id=44ae09ae-5ce8-24ba-6b60-5821505cfedf @caller=/home/francisfeli/go/pkg/mod/github.com/hashicorp/terraform-plugin-go@v0.29.0/tfprotov6/tf6server/server.go:589 tf_rpc=GetResourceIdentitySchemas @module=sdk.proto tf_proto_version=6.10 tf_provider_addr=hashicorp.com/franciscosanchezn/pizza-sim timestamp="2025-11-15T11:56:10.976+0100"
+2025-11-15T11:56:10.976+0100 [DEBUG] No provider meta schema returned
+2025-11-15T11:56:10.976+0100 [TRACE] GRPCProvider.v6: Close
+2025-11-15T11:56:10.976+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2025-11-15T11:56:10.977+0100 [INFO]  provider: plugin process exited: plugin=/home/francisfeli/Projects/public/terraform-provider-pizzasim/terraform-provider-pizzasim id=633237
+2025-11-15T11:56:10.977+0100 [DEBUG] provider: plugin exited
+2025-11-15T11:56:10.977+0100 [TRACE] Context.Input: Prompting for provider arguments
+2025-11-15T11:56:10.977+0100 [TRACE] Context.Input: Provider provider.pizzasim declared at main.tf:9,1-20
+2025-11-15T11:56:10.977+0100 [TRACE] Context.Input: Input for provider.pizzasim: map[string]cty.Value{}
+2025-11-15T11:56:10.977+0100 [TRACE] backend/local: running validation operation
+2025-11-15T11:56:10.977+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.977+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.977+0100 [DEBUG] Building and walking validate graph
+2025-11-15T11:56:10.977+0100 [TRACE] building graph for walkValidate
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] ConfigTransformer: Starting for path:
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.variableValidationTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: adding validation nodes for any existing variable evaluation nodes
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: var.pizzasim_client_id has no validation rules
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: var.pizzasim_client_secret has no validation rules
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.LocalTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OutputTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.checkTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.StateTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] StateTransformer: pointless no-op call, creating no nodes at all
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.externalProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.externalProviderTransformer with new graph:
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] ProviderConfigTransformer: attaching to "provider[\"hashicorp.com/franciscosanchezn/pizzasim\"]" provider configuration from main.tf:9,1-20
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider["hashicorp.com/franciscosanchezn/pizzasim"] - *terraform.NodeApplyableProvider
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer (no changes)
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2025-11-15T11:56:10.977+0100 [DEBUG] pruning unused provider["hashicorp.com/franciscosanchezn/pizzasim"]
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer with new graph:
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ExternalReferenceTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2025-11-15T11:56:10.977+0100 [DEBUG] ReferenceTransformer: "var.pizzasim_client_id" references: []
+2025-11-15T11:56:10.977+0100 [DEBUG] ReferenceTransformer: "var.pizzasim_client_secret" references: []
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.attachDataResourceDependsOnTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.pruneUnusedNodesTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ephemeralResourceCloseTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Completed graph transform:
+root - *terraform.nodeCloseModule
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+var.pizzasim_client_id - *terraform.NodeRootVariable
+var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [DEBUG] Starting graph walk: walkValidate
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": starting visit (*terraform.NodeRootVariable)
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": belongs to
+2025-11-15T11:56:10.977+0100 [TRACE] NodeRootVariable: evaluating var.pizzasim_client_id
+2025-11-15T11:56:10.977+0100 [TRACE] PrepareFinalInputVariableValue: preparing var.pizzasim_client_id
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": visit complete
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_secret": starting visit (*terraform.NodeRootVariable)
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_secret": belongs to
+2025-11-15T11:56:10.977+0100 [TRACE] NodeRootVariable: evaluating var.pizzasim_client_secret
+2025-11-15T11:56:10.977+0100 [TRACE] PrepareFinalInputVariableValue: preparing var.pizzasim_client_secret
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_secret": visit complete
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "root": does not belong to any module instance
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "root": visit complete
+2025-11-15T11:56:10.977+0100 [INFO]  backend/local: plan calling Plan
+2025-11-15T11:56:10.977+0100 [DEBUG] Building and walking plan graph for NormalMode
+2025-11-15T11:56:10.977+0100 [TRACE] building graph for walkPlan
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] ConfigTransformer: Starting for path:
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.variableValidationTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: adding validation nodes for any existing variable evaluation nodes
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: var.pizzasim_client_id has no validation rules
+2025-11-15T11:56:10.977+0100 [TRACE] variableValidationTransformer: var.pizzasim_client_secret has no validation rules
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.LocalTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OutputTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.checkTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.StateTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.externalProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.externalProviderTransformer with new graph:
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] ProviderConfigTransformer: attaching to "provider[\"hashicorp.com/franciscosanchezn/pizzasim\"]" provider configuration from main.tf:9,1-20
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+  provider["hashicorp.com/franciscosanchezn/pizzasim"] - *terraform.NodeApplyableProvider
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer (no changes)
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2025-11-15T11:56:10.977+0100 [DEBUG] pruning unused provider["hashicorp.com/franciscosanchezn/pizzasim"]
+2025-11-15T11:56:10.977+0100 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer with new graph:
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ModuleExpansionTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ExternalReferenceTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2025-11-15T11:56:10.977+0100 [DEBUG] ReferenceTransformer: "var.pizzasim_client_secret" references: []
+2025-11-15T11:56:10.977+0100 [DEBUG] ReferenceTransformer: "var.pizzasim_client_id" references: []
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.AttachDependenciesTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.attachDataResourceDependsOnTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.DestroyEdgeTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.pruneUnusedNodesTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.ephemeralResourceCloseTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.CloseRootModuleTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2025-11-15T11:56:10.977+0100 [TRACE] Completed graph transform:
+root - *terraform.nodeCloseModule
+  var.pizzasim_client_id - *terraform.NodeRootVariable
+  var.pizzasim_client_secret - *terraform.NodeRootVariable
+var.pizzasim_client_id - *terraform.NodeRootVariable
+var.pizzasim_client_secret - *terraform.NodeRootVariable
+  ------
+2025-11-15T11:56:10.977+0100 [DEBUG] Starting graph walk: walkPlan
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": starting visit (*terraform.NodeRootVariable)
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": belongs to
+2025-11-15T11:56:10.977+0100 [TRACE] NodeRootVariable: evaluating var.pizzasim_client_id
+2025-11-15T11:56:10.977+0100 [TRACE] PrepareFinalInputVariableValue: preparing var.pizzasim_client_id
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_id": visit complete
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_secret": starting visit (*terraform.NodeRootVariable)
+2025-11-15T11:56:10.977+0100 [TRACE] vertex "var.pizzasim_client_secret": belongs to
+2025-11-15T11:56:10.977+0100 [TRACE] NodeRootVariable: evaluating var.pizzasim_client_secret
+2025-11-15T11:56:10.978+0100 [TRACE] PrepareFinalInputVariableValue: preparing var.pizzasim_client_secret
+2025-11-15T11:56:10.978+0100 [TRACE] vertex "var.pizzasim_client_secret": visit complete
+2025-11-15T11:56:10.978+0100 [TRACE] vertex "root": starting visit (*terraform.nodeCloseModule)
+2025-11-15T11:56:10.978+0100 [TRACE] vertex "root": does not belong to any module instance
+2025-11-15T11:56:10.978+0100 [TRACE] vertex "root": visit complete
+2025-11-15T11:56:10.978+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.978+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.978+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.978+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.978+0100 [TRACE] Plan is complete
+2025-11-15T11:56:10.978+0100 [TRACE] Plan is not applyable
+2025-11-15T11:56:10.978+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.978+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.978+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.978+0100 [DEBUG] no planned changes, skipping apply graph check
+2025-11-15T11:56:10.978+0100 [INFO]  backend/local: plan operation completed
+2025-11-15T11:56:10.978+0100 [TRACE] LoadSchemas: retrieving schema for provider type "hashicorp.com/franciscosanchezn/pizzasim"
+2025-11-15T11:56:10.978+0100 [TRACE] terraform.contextPlugins: Schema for provider "hashicorp.com/franciscosanchezn/pizzasim" is in the global cache
+2025-11-15T11:56:10.978+0100 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2025-11-15T11:56:10.978+0100 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock

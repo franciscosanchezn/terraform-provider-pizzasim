@@ -27,6 +27,38 @@ go.work.sum
 # env file
 .env
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# Task tracking
+.tasks/
+.task/
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Terraform artifacts
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Provider binaries
+terraform-provider-*
+!terraform-provider-scaffolding-framework/
+
+# Build output
+dist/
+*.zip
+
+# OS-specific files
+.DS_Store
+Thumbs.db
